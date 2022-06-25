@@ -9,7 +9,8 @@ function hasTargetSum(array, target) {
   }
   return false 
   // Write your algorithm here
-}
+} 
+
  
 /* 
   Write the Big O time complexity of your function here
@@ -40,4 +41,30 @@ if (require.main === module) {
   console.log("=>", hasTargetSum([1, 2, 5], 4));
 }
 
-module.exports = hasTargetSum;
+module.exports = hasTargetSum; 
+
+
+
+function hasTargetSum(array, target) {
+  // Write your algorithm here
+  const seenNumbers = {};
+
+  for (const number of array) {
+    const complement = target - number;
+    if (complement in seenNumbers) return true;
+    seenNumbers[number] = true;
+  }
+
+  return false;
+}
+
+function findSock(array) {
+  for (const item of array) {
+    if (item === "sock") return "sock";
+  }
+}
+
+// O(1) runtime
+function findSock(object) {
+  if (object.sock) return "sock";
+}
